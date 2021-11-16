@@ -53,11 +53,12 @@ export default {
 <style lang="scss" module>
 .boost_main {
   position: relative;
-  background: #fff;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  display: inline-block;
-  margin-right: 16px;
+
+  &:hover {
+    .add_box {
+      top: -40px;
+    }
+  }
 }
 
 .add_box {
@@ -66,15 +67,14 @@ export default {
   background: #fff;
   top: -10px;
   border: 1px solid #eaeaea;
+  border-bottom: 0;
   border-radius: 8px 8px 0px 0px;
   transition: all 0.4s ease;
   color: #4f5bd5;
   font-size: 26px;
   padding: 4px 107.5px;
   margin: 0 12px;
-  &:hover {
-    top: -40px;
-  }
+
   &.active {
     background: #4f5bd5;
     color: #fff;
@@ -84,6 +84,10 @@ export default {
 }
 
 .first_box {
+  padding: 24px 16px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
   padding: 24px 16px;
 }
 
@@ -98,15 +102,13 @@ export default {
 .text {
   color: #3c3c3c;
   margin-top: 17px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+
   span {
     text-align: right;
     color: #3c3c3c;
     font-size: 30px;
     font-weight: bold;
-    margin-left: 120px;
+    margin-left: 116px;
   }
 }
 
@@ -114,26 +116,19 @@ export default {
   position: absolute;
   top: 0;
   width: 100%;
-  padding-bottom: 178px;
+  height: 254.5%;
+  overflow: hidden;
   border: 1px solid #eaeaea;
   border-radius: 8px;
   background: #fff;
   animation: test 1s ease;
-  z-index: 2;
-}
-
-@keyframes test {
-  from {
-    padding-bottom: 0px;
-  }
-  to {
-    padding-bottom: 178px;
-  }
+  z-index: 1;
 }
 
 .title {
   margin: 24px 0;
   text-align: center;
+
   span {
     display: inline-block;
     color: #4f5bd5;
@@ -184,11 +179,13 @@ export default {
 :global {
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity 0.8s ease;
+    transition: all 0.5s ease;
   }
+
   .fade-enter,
   .fade-leave-to {
     opacity: 0;
+    height: 100%;
   }
 }
 </style>

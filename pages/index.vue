@@ -1,12 +1,14 @@
 <template>
   <div :class="$style.main">
-    <div :class="$style.fix_box">
-      <PieceBox
+    <div :class="$style.item">
+      <CardBox
         date-start="2020/02/10"
         date-end="2020/02/10"
         number-liking="100"
       />
-      <PieceBox
+    </div>
+    <div :class="$style.item">
+      <CardBox
         date-start="2020/02/10"
         date-end="2020/02/10"
         number-liking="150"
@@ -18,7 +20,6 @@
 <script>
 export default {
   name: 'Pageindex',
-  data: () => ({}),
 }
 </script>
 
@@ -27,5 +28,10 @@ export default {
   max-width: 1000px;
   margin: 0 auto;
   margin-top: 219px;
+}
+
+.item {
+  float: left;
+  margin-right: 16px;
 }
 </style>
